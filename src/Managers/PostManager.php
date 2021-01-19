@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App;
+namespace App\Managers;
 
 
 use PDOStatement;
@@ -29,11 +29,11 @@ abstract class PostManager
     }
 
     /**
-     * Import default data into posts table
+     * Insert an example Post data into posts table
      *
      * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
      */
-    public static function importDefaultData(): bool
+    public static function insertOneExamplePost(): bool
     {
         $pdo = DatabaseManager::getPdoInstance();
 
@@ -71,7 +71,7 @@ abstract class PostManager
     {
         $pdo = DatabaseManager::getPdoInstance();
 
-        $statement = $pdo->query(sprintf("SELECT * FROM posts WHERE ID = %s", $id));
+        $statement = $pdo->query(sprintf("SELECT * FROM posts WHERE ID == %s", $id));
 
         return $statement->fetchAll();
     }
