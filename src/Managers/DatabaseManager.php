@@ -30,7 +30,10 @@ class DatabaseManager
     public static function getPdoInstance(): PDO
     {
         if (self::$pdo_instance == null) {
-            $pdo = new PDO('sqlite:' . dirname(__FILE__) . '/database.sqlite');
+            if (!is_dir(DATABASE_FOLDER))
+                mkdir(DATABASE_FOLDER);
+
+            $pdo = new PDO('sqlite:' . DATABASE_FOLDER . '/database.sqlite');
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // ERRMODE_WARNING | ERRMODE_EXCEPTION | ERRMODE_SILENT
 
