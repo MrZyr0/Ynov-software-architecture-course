@@ -1,0 +1,16 @@
+{
+    "name": "zyr0/ynov-software-architecture-course",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Julien SEIXAS (MrZyr0)",
+            "email": "32927775+MrZyr0@users.noreply.github.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\" : "src/"
+        }
+    },
+    "require": {}
+}
