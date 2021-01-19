@@ -8,12 +8,13 @@ use PDO;
 
 class DB_Connection {
     private static $instance = null;
-    private $pdo = null;
+    private $pdo;
 
     private function __construct()
     {
-        try{
-            self::$pdo = new PDO('sqlite:'.dirname(__FILE__).'/database.sqlite');
+        try {
+            /** @noinspection PhpComposerExtensionStubsInspection */
+            $this->pdo = new PDO('sqlite:' . dirname(__FILE__) . '/database.sqlite');
         } catch (Exception $e) {
             return null;
         }
