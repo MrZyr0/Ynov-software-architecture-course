@@ -6,7 +6,8 @@ use Exception;
 use PDO;
 
 
-class DB_Connection {
+class DB_Connection
+{
     private static $instance = null;
     private $pdo;
 
@@ -22,7 +23,7 @@ class DB_Connection {
 
     public static function getInstance(): DB_Connection
     {
-        if(self::$instance == null) {
+        if (self::$instance == null) {
             self::$instance = new DB_Connection();
         }
         return self::$instance;
