@@ -14,7 +14,6 @@ class DB_Connection
     private function __construct()
     {
         try {
-            /** @noinspection PhpComposerExtensionStubsInspection */
             $this->pdo = new PDO('sqlite:' . dirname(__FILE__) . '/database.sqlite');
         } catch (Exception $e) {
             return null;
