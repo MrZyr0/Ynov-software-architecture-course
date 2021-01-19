@@ -7,11 +7,12 @@ use PDO;
 
 class DB_Connection {
     private static $instance = null;
+    private $pdo = null;
 
     private function __construct()
     {
         try{
-            self::$instance = new PDO('sqlite:'.dirname(__FILE__).'/database.sqlite');
+            self::$pdo = new PDO('sqlite:'.dirname(__FILE__).'/database.sqlite');
         } catch (Exception $e) {
             return null;
         }
