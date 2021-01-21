@@ -21,10 +21,13 @@ abstract class DemoHelper
         }
         $posts = PostManager::getAllPosts();
 
-        HTMLPrinter::dump($posts);
-
 
         $post_0 = PostManager::getPostById("1");
+
+
+        HTMLPrinter::heading('Example of singleton usage', 2);
+
+        HTMLPrinter::dump($posts);
 
         HTMLPrinter::dump($post_0);
     }
@@ -44,6 +47,8 @@ abstract class DemoHelper
                 HTMLPrinter::dump($e);
             }
         }
+
+        HTMLPrinter::heading('Example of factory usage', 2);
 
         HTMLPrinter::dump($products);
     }
