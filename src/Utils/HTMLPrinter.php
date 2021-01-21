@@ -42,9 +42,11 @@ abstract class HTMLPrinter
                     <option value="%s">Clothing</option>
                 </select>
                 <input type="submit" value="Create" />
+                <input type="hidden" name="demo" value="%s">
             </form>',
             ProductType::BOOK,
-            ProductType::CLOTHING
+            ProductType::CLOTHING,
+            $_POST['demo']
         );
     }
 

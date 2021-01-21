@@ -88,7 +88,7 @@ abstract class DemoHelper
     {
         HTMLPrinter::heading('Example of factory advanced usage', 2);
 
-        if (!empty($_POST)) {
+        if (!empty($_POST) && !empty($_POST['productType'])) {
             $productFactory = new ProductFactory();
 
             try {
