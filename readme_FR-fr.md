@@ -47,6 +47,62 @@ class ExampleClass {
 }
 ```
 
+##### Classes immuables
+
+Une classe est immuable s'il n'est pas possible de modifier les propriétés de l'objet après son instanciation, il ne
+possède pas de setter. La seule façon d'avoir un objet de cette même classe avec d'autre données, il faut une nouvelle
+instance. Soit manuellement, soit via une fonction fournie par la classe.
+
+**Example:**
+
+```php
+class ImmutableExampleClass {
+    /**
+     * Example of immutable property 
+     * @var string
+     */
+    private string $immutablePropertyExample;
+    
+    /**
+     * ImmutableExampleClass constructor.
+     * 
+     * @param string $immutablePropertyExample
+     */
+    public function __construct(string $immutablePropertyExample) {
+        $this->immutablePropertyExample = $immutablePropertyExample;
+    }
+    
+   /**
+    * Example of immutable property 
+    * @return string
+    */
+    public  function getImmutablePropertyExample(): string{
+        return $this->immutablePropertyExample;
+    }
+    
+    public function getOutput(): string {
+        return $this->immutablePropertyExample . ' of some process';
+    }
+    
+    /**
+     * Function to create a new object form this immutable class with an additional string
+     * 
+     * @param string $immutablePropertyExample
+     * @return ImmutableExampleClass
+     */
+    public function createNew(string $immutablePropertyExample):ImmutableExampleClass {
+        return new ImmutableExampleClass($this->immutablePropertyExample . ' ' . $immutablePropertyExample);
+    }
+}
+
+$immutableObject = new ImmutableExampleClass('Example');
+$immutableObject->getOutput();
+
+$newImmutableObject = new ImmutableExampleClass($immutableObject->getImmutablePropertyExample() . '2');
+// OR
+$newImmutableObject = $immutableObject->createNew('2');
+```
+
 ##### Classes abstraites ~ `abstract class`
 
 Déclaré avec le mot clé `abstract`, une classe abstraite n'est pas instantiable, on ne peux pas utiliser le mot
