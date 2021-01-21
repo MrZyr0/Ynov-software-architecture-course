@@ -6,6 +6,30 @@ Voici toutes mes notes et bout de code "démo" des différents modèles de conce
 
 ## Software Architecture Cheat Sheet
 
+**Navigation**
+- [Software Architecture Cheat Sheet](#software-architecture-cheat-sheet)
+    - [Global concepts](#global-concepts)
+        - [Utilitaires ~ `Utils`](#utilitaires--utils)
+        - [Aidant ~ `Helpers`](#aidant--helpers)
+    - [Oriented Object concepts](#oriented-object-concepts)
+        - [Classes ~ `class`](#classes--class)
+            - [Classes immuables](#classes-immuables)
+            - [Classes abstraites ~ `abstract class`](#classes-abstraites--abstract-class)
+                - [Fonctions abstraites ~ `abstract function`](#fonctions-abstraites--abstract-function)
+        - [`Traits`](#traits)
+        - [Instance unique - `Singleton`](#instance-unique---singleton)
+        - [Interfaces ~ `interfaces`](#interfaces--interfaces)
+        - [Entités ~ `Entities`](#entités--entities)
+        - [Usines ~ `Factories`](#usines--factories)
+        - [Managers](#managers)
+        - [Types](#types)
+        - [Adaptateur](#adaptateur)
+        - [Décorateur](#décorateur)
+        - [Auto load - PHP](#auto-load---php)
+            - [Mise en place](#mise-en-place)
+    - [Sources](#sources)
+
+
 ### Global concepts
 
 Il existe des concepts de projet globaux qui peuvent s'appliquer à toute typologie de projet.
@@ -307,7 +331,7 @@ L'auto-load est un outil très pratique qui permet de remplacer les `require` po
 Cet outil se base sur un Namespace qui correspond au chemin du fichier depuis la racine des sources déclaré dans le
 fichier `composer.json`.
 
-##### Le mettre en place
+##### Mise en place
 
 1. Pour commencer il faut avoir initialisé composer.
    ```shell

@@ -6,6 +6,30 @@ Here are all my notes and demonstration code of the different design patterns se
 
 ## Software Architecture Cheat Sheet
 
+**Navigation**
+
+- [Software Architecture Cheat Sheet](#software-architecture-cheat-sheet)
+    - [Global concepts](#global-concepts)
+        - [Utils](#utils)
+        - [Helpers](#helpers)
+    - [Oriented Object concepts](#oriented-object-concepts)
+        - [Classes](#classes)
+            - [Immutable](#immutable)
+            - [Abstract](#abstract)
+                - [Abstract functions](#abstract-functions)
+        - [Traits](#traits)
+        - [Singleton](#singleton)
+        - [Interfaces](#interfaces)
+        - [Entities](#entities)
+        - [Factories](#factories)
+        - [Managers](#managers)
+        - [Types](#types)
+        - [Adapter](#adapter)
+        - [Decorator](#decorator)
+        - [Auto load - PHP](#auto-load---php)
+            - [Setting it up](#setting-it-up)
+    - [Sources](#sources)
+
 ### Global concepts
 
 There are overarching project concepts that should apply to any project typology.
