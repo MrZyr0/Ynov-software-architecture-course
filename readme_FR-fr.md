@@ -1,4 +1,4 @@
-# My software architecture course at Ynov
+# Mon cours d'architecture logicielle à Ynov
 
 Voici toutes mes notes et bout de code "démo" des différents modèles de conception "design pattern" vus en classe.
 
