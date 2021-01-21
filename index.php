@@ -9,6 +9,8 @@ use App\Helpers\DemoHelper;
 
 HTMLPrinter::heading('My software architecture course at Ynov', 1);
 
-DemoHelper::singleton();
+DemoHelper::singletonUsage();
 
-DemoHelper::factory();
+//DemoHelper::basicFactoryUsage();
+
+DemoHelper::advancedFactoryUsage();

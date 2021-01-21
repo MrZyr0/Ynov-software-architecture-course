@@ -4,6 +4,7 @@
 namespace App\Utils;
 
 
+use App\Types\ProductType;
 use Exception;
 
 abstract class HTMLPrinter
@@ -24,5 +25,25 @@ abstract class HTMLPrinter
         $markup = 'h' . $level;
 
         echo sprintf('<%s>%s</%s>', $markup, $text, $markup);
+    }
+
+    public static function flash(string $text)
+    {
+        echo sprintf('<p style="border: 1px solid; padding: 0.5rem 1rem;" ">%s</p>', $text);
+    }
+
+    public static function productForm()
+    {
+        echo sprintf('
+            <form method="post">
+                <select name="productType">
+                    <option value="%s">Livre</option>
+                    <option value="%s">Vêtement</option>
+                </select>
+                <input type="submit" value="Créer" />
+            </form>',
+            ProductType::BOOK,
+            ProductType::CLOTHING
+        );
     }
 }

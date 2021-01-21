@@ -9,10 +9,11 @@ use App\Managers\PostManager;
 use App\Types\ProductType;
 use App\Utils\HTMLPrinter;
 use Exception;
+use InvalidArgumentException;
 
 abstract class DemoHelper
 {
-    public static function singleton()
+    public static function singletonUsage()
     {
         PostManager::init();
 
@@ -32,7 +33,7 @@ abstract class DemoHelper
         HTMLPrinter::dump($post_0);
     }
 
-    public static function factory()
+    public static function basicFactoryUsage()
     {
         $products = [];
 
@@ -48,8 +49,28 @@ abstract class DemoHelper
             }
         }
 
-        HTMLPrinter::heading('Example of factory usage', 2);
+        HTMLPrinter::heading('Example of factory basic usage', 2);
 
         HTMLPrinter::dump($products);
+    }
+
+    public static function advancedFactoryUsage()
+    {
+        HTMLPrinter::heading('Example of factory advanced usage', 2);
+
+        if (!empty($_POST)) {
+            $productFactory = new ProductFactory();
+
+            try {
+                $product = $productFactory->create(intval($_POST['productType']));
+            } catch (InvalidArgumentException $e) {
+                die('Une erreur est survenue : ' . $e->getMessage());
+            }
+
+            HTMLPrinter::flash('Here is the product you are asking to create :');
+            HTMLPrinter::dump($product);
+        }
+
+        HTMLPrinter::productForm();
     }
 }
