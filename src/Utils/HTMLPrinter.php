@@ -37,10 +37,10 @@ abstract class HTMLPrinter
         echo sprintf('
             <form method="post">
                 <select name="productType">
-                    <option value="%s">Livre</option>
-                    <option value="%s">Vêtement</option>
+                    <option value="%s">Book</option>
+                    <option value="%s">Clothing</option>
                 </select>
-                <input type="submit" value="Créer" />
+                <input type="submit" value="Create" />
             </form>',
             ProductType::BOOK,
             ProductType::CLOTHING
