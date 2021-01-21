@@ -352,3 +352,10 @@ fichier `composer.json`.
 3. Afin pour que ça fonctionne il faut demander à composer de générer les fichiers nécessaires au fonctionnement.
    `composer dump-autoload`
    Cela va générer un dossier `vendor` qu'**il ne faut pas commit car cela est inutile**.
+
+## Sources
+
+- [Répertoire du professeur](https://github.com/ld-web/ynov-masters-rappel-objet)
+- [Wikipedia - Classe](https://fr.wikipedia.org/wiki/Classe_(informatique))
+- [Wikipedia - Singleton](https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception))
+- [Wikipedia - Interface](https://fr.wikipedia.org/wiki/Interface_(programmation_orientée_objet))

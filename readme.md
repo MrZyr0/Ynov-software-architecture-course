@@ -348,3 +348,12 @@ on a Namespace that corresponds to the file path from the root of the sources de
 3. In order for it to work, you must ask to composer to generate the necessary files.
    `composing dump-autoload`
    This will generate a `vendor` directory **that should not be committed because it is useless**.
+
+## Sources
+
+- [Teacher's repository](https://github.com/ld-web/ynov-masters-rappel-objet)
+- [Wikipedia - Class](https://en.wikipedia.org/wiki/Class_(computer_programming))
+- [Wikipedia - Helper Class](https://en.wikipedia.org/wiki/Helper_class)
+- [Wikipedia - Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
+- [Wikipedia - Interface](https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming))
+- [Wikipedia - Factory](https://en.wikipedia.org/wiki/Factory_%28object-oriented_programming%29)
