@@ -140,16 +140,32 @@ duplication.
 
 ```php
 trait ExampleTrait {
+   /**
+    * Example trait property
+    * 
+    * @var string
+    */
    public string $exampleTraitProperty;
    
-   public function getExampleTraitProperty() {
-    return $this->exampleTraitProperty;
+   /**
+    * Example trait property getter
+    * 
+    * @return string
+    */
+    public function getExampleTraitProperty():string {
+        return $this->exampleTraitProperty;
    }
    
-   public function setExampleTraitProperty($value) {
+   /**
+    * Example trait property setter
+    * 
+    * @param $value
+    * @return self
+    */
+    public function setExampleTraitProperty($value) {
       $this->exampleTraitProperty = $value;
       
-      return $this->exampleTraitProperty;
+      return $this;
    }
 }
 ```
@@ -164,14 +180,19 @@ the project.
 ```php
 class SingletonExampleClass
 {
-    private static $singleton_instance = null;
+    /**
+     * Singleton instance storage property
+     * 
+     * @var Object
+     */
+    private static Object $singleton_instance;
 
-    private function __construct()
-    {
-        // Constructor is useless here
-    }
-
-    public static function getSingleton()
+    /**
+     * Example singleton getter
+     * 
+     * @return object
+     */
+    public static function getSingleton():object
     {
         if (self::$singleton_instance == null) {
             self::$singleton_instance = (object) 'Example';
@@ -192,6 +213,11 @@ certain methods whatever the class.
 
 ```php
 interface ExampleInterface {
+    /**
+     * Example of method signature declared in interface
+     * 
+     * @return mixed
+     */
     public function exampleMustImplementedFunction();
 }
 ```
@@ -205,17 +231,36 @@ project.
 
 ```php
 class User {
+   /**
+    * Username property
+    * 
+    * @var string username
+    */
    public string $username;
    
-   public function __construct($username) {
+   /**
+    * User constructor.
+    *
+    * @param string $username
+    */
+   public function __construct(string $username) {
     $this->username = $username;
    }
    
-   public function getUsername() {
-    return $this->username;
+   /**
+    * Username Getter
+    * 
+    * @return string
+    */
+   public function getUsername():string {
+       return $this->username;
    }
    
-   public function setUsername(string $username) {
+   /**
+    * @param string $username
+    * @return string
+    */
+   public function setUsername(string $username):string {
     $this->username = $username;
     return $this->username;
    }
