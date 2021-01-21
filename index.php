@@ -4,13 +4,9 @@ define("DATABASE_FOLDER", PROJECT_ROOT . '/DB');
 
 require 'vendor/autoload.php';
 
-use App\Utils\HTMLPrinter;
 use App\Helpers\DemoHelper;
+use App\Utils\HTMLPrinter;
 
 HTMLPrinter::heading('My software architecture course at Ynov', 1);
 
-DemoHelper::singletonUsage();
-
-//DemoHelper::basicFactoryUsage();
-
-DemoHelper::advancedFactoryUsage();
+DemoHelper::demoPrinter();

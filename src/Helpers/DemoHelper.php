@@ -13,6 +13,36 @@ use InvalidArgumentException;
 
 abstract class DemoHelper
 {
+    const DEMO_SINGLETON = 1;
+    const DEMO_FACTORY_BASIC = 2;
+    const DEMO_FACTORY_ADVANCED = 3;
+
+    public static function demoPrinter()
+    {
+        HTMLPrinter::demoForm();
+
+
+        if (!empty($_POST) && !empty($_POST['demo'])) {
+            switch ($_POST['demo']) {
+                case self::DEMO_SINGLETON:
+                    self::singletonUsage();
+                    break;
+
+                case self::DEMO_FACTORY_BASIC:
+                    self::basicFactoryUsage();
+                    break;
+
+                case self::DEMO_FACTORY_ADVANCED:
+                    self::advancedFactoryUsage();
+                    break;
+
+                default:
+                    echo sprintf('<p>%s</p>', 'unknown demo number');
+                    break;
+            }
+        }
+    }
+
     public static function singletonUsage()
     {
         PostManager::init();

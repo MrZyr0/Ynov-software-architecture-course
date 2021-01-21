@@ -4,6 +4,7 @@
 namespace App\Utils;
 
 
+use App\Helpers\DemoHelper;
 use App\Types\ProductType;
 use Exception;
 
@@ -44,6 +45,24 @@ abstract class HTMLPrinter
             </form>',
             ProductType::BOOK,
             ProductType::CLOTHING
+        );
+    }
+
+    public static function demoForm()
+    {
+        echo sprintf('
+            <p style="display: inline">Start a demo :</p>
+            <form method="post" style="display: inline">
+                <select name="demo">
+                    <option value="%s">Singleton demo usage result</option>
+                    <option value="%s">Factory demo basic usage result</option>
+                    <option value="%s">Factory demo advanced usage result</option>
+                </select>
+                <input type="submit" value="Start" />
+            </form>',
+            DemoHelper::DEMO_SINGLETON,
+            DemoHelper::DEMO_FACTORY_BASIC,
+            DemoHelper::DEMO_FACTORY_ADVANCED,
         );
     }
 }
